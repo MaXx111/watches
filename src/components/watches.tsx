@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import Form from './form'
 import WatchList from './WatchList'
 import { IWatch } from '../model'
@@ -26,7 +26,7 @@ function Watches() {
 
     }, []);
 
-    const onRemove = useCallback((id: any) => {
+    const onRemove = useCallback((id?: string) => {
         setWatch(prevWatch => {
             return prevWatch.filter(item => item.id !== id)
         });

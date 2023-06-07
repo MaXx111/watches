@@ -3,7 +3,7 @@ import {IWatch} from '../model'
 
 interface WatchListProps {
     watches: IWatch[],
-    removeHandler: (id: string) => void
+    removeHandler: (id?: string) => void
 }
 
 function WatchList({watches, removeHandler} : WatchListProps ) {

@@ -1,11 +1,12 @@
 import { useState, memo, useEffect } from "react";
+import { IWatch } from '../model'
 
 interface WatchProps {
-    data: any,
-    onRemove: any
+    data: IWatch,
+    onRemove: (id?: string) => void
 }
 
-const Watch = memo(function Watch({ data, onRemove }: any) {
+const Watch = memo(function Watch({ data, onRemove }: WatchProps) {
     console.log(`print`)
     const [deg, setDeg] = useState(0);
 
