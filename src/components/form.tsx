@@ -1,7 +1,7 @@
 import { memo, useState } from "react"
 
 interface FormProps {
-    onSubmit: ( text: string, time: string) => void
+    onSubmit: ( text: string, time: number) => void
 }
 
 const Form = memo(function Form({onSubmit}: FormProps) {
@@ -9,7 +9,7 @@ const Form = memo(function Form({onSubmit}: FormProps) {
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        onSubmit(valueText, valueTime)
+        onSubmit(valueText, Number(valueTime))
 
         setValueText('');
         setValueTime('');

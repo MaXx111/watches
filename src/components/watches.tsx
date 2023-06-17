@@ -2,15 +2,13 @@ import { useState, useCallback } from 'react'
 import Form from './form'
 import WatchList from './WatchList'
 import { IWatch } from '../model'
-
 import { v4 } from 'uuid'
-
 
 function Watches() {
 
     const [watches, setWatch] = useState<IWatch[]>([])
 
-    const onSubmit = useCallback((text: string, time: string) => {
+    const onSubmit = useCallback((text: string, time: number) => {
 
         if(!text || !time) return
 
